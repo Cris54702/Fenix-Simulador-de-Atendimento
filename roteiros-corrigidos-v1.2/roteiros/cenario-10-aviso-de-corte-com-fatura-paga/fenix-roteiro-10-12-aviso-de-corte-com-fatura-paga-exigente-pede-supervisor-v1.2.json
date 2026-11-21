@@ -1,0 +1,419 @@
+{
+ "id": "10.12",
+ "versao": "1.2",
+ "empresa_padrao": "Fênix",
+ "cenario": {
+  "id": 10,
+  "titulo": "Aviso de corte com fatura já paga",
+  "dificuldade": 3,
+  "novo": true,
+  "objetivo": "Tratar pagamento não localizado: validar comprovante, abrir pedido de baixa e orientar sobre a suspensão da ordem de corte.",
+  "armadilha": "Dizer que o cliente está errado; não pedir o comprovante; prometer suspensão sem abrir o pedido."
+ },
+ "persona": {
+  "id": 12,
+  "titulo": "Cliente exigente (pede supervisor)",
+  "dificuldade": 4,
+  "novo": true,
+  "cliente_ficticio": "Eduardo Falcão",
+  "voz": "Ritmo controlado, tom frio, cita direitos",
+  "paciencia": 40,
+  "perfil": "Cliente que cita direitos, exige registro por escrito, nome e matrícula do atendente e pede o supervisor.",
+  "tecnica_chave": "Manter a calma e a postura, informar o que pode ser informado, registrar tudo e oferecer o encaminhamento ao supervisor sem perder o controle da chamada.",
+  "erros_comuns": [
+   "Se irritar ou se defender.",
+   "Prometer o que depende do supervisor.",
+   "Negar o direito ao registro."
+  ],
+  "avaliador_observa": [
+   "Postura profissional.",
+   "Registro e protocolo claros.",
+   "Encaminhamento ao supervisor conforme política."
+  ]
+ },
+ "dificuldade_total": 7,
+ "nivel_libera": "Sênior",
+ "dados_chamado": {
+  "unidade_consumidora": "063481-6",
+  "rua": "Rua das Orquídeas",
+  "numero": "888",
+  "bairro": "Industrial",
+  "cidade": "Vale Azul",
+  "protocolo": "26248873-7"
+ },
+ "passos": [
+  {
+   "n": 1,
+   "titulo": "1º Passo - Abertura",
+   "meta": "60 s",
+   "checklist": "Saudação pelo horário do aparelho; nome da empresa; nome do atendente; pedir o nome do cliente e chamá-lo pelo nome; triagem; pedir unidade consumidora ou CPF.",
+   "falas": [
+    {
+     "quem": "A",
+     "texto": "Atendimento Fênix, [nome do atendente], [bom dia/boa tarde/boa noite, pela hora do aparelho]. Qual o seu nome, por favor?"
+    },
+    {
+     "quem": "C",
+     "texto": "[saudação]. Eduardo Falcão. Quero deixar claro que conheço os meus direitos e que vou registrar tudo."
+    },
+    {
+     "quem": "A",
+     "texto": "Senhor Eduardo, no que posso ajudar?"
+    },
+    {
+     "quem": "C",
+     "texto": "Anote aí: recebi um aviso de corte, mas eu já paguei essa fatura. Quero isso por escrito."
+    },
+    {
+     "quem": "C",
+     "texto": "Quero o seu nome completo e a sua matrícula. Isso já deveria ter sido resolvido."
+    },
+    {
+     "quem": "A",
+     "texto": "Meu nome é o que informei no início, senhor Eduardo. Vou registrar o seu pedido e o protocolo vai constar no final."
+    },
+    {
+     "quem": "A",
+     "texto": "Senhor Eduardo, qual é o mês da fatura e em que dia o senhor pagou?"
+    },
+    {
+     "quem": "C",
+     "texto": "É a de setembro, paguei no dia 10."
+    },
+    {
+     "quem": "A",
+     "texto": "Senhor Eduardo, pode me informar o código da unidade consumidora, que fica no canto superior direito da fatura, ou o CPF do titular?"
+    },
+    {
+     "quem": "C",
+     "texto": "Quero que conste que a unidade consumidora é 063481-6. Esse atendimento está sendo gravado?"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "titulo": "2º Passo - Pausa de 20 s e confirmação positiva",
+   "meta": "20 s de pausa + 45 s de confirmação",
+   "checklist": "Pedir licença e avisar que o sistema ficará mudo; dizer 'é só chamar'; agradecer ao voltar; confirmar rua, número, bairro e município, um a um.",
+   "falas": [
+    {
+     "quem": "A",
+     "texto": "Obrigado(a). Vou consultar o seu cadastro e, enquanto isso, o sistema ficará mudo. Se o senhor precisar de qualquer coisa, é só me chamar!"
+    },
+    {
+     "quem": "C",
+     "texto": "Esse tempo conta para o atendimento? Vocês estão cronometrando?"
+    },
+    {
+     "quem": "A",
+     "texto": "Sim, o tempo é registrado, senhor Eduardo. São só 20 segundos."
+    },
+    {
+     "quem": "C",
+     "texto": "Tudo bem, pode consultar."
+    },
+    {
+     "quem": "sistema",
+     "tipo": "pausa",
+     "segundos": 20,
+     "texto": "PAUSA DE 20 s - cliente em silêncio. O aluno consulta o cadastro; se o cliente chamar, o atendente responde."
+    },
+    {
+     "quem": "A",
+     "texto": "Senhor Eduardo, obrigado por aguardar. Localizei os seus dados."
+    },
+    {
+     "quem": "A",
+     "texto": "O senhor reside na Rua das Orquídeas, correto?"
+    },
+    {
+     "quem": "C",
+     "texto": "Segundo o meu direito, sim, é nesse endereço mesmo."
+    },
+    {
+     "quem": "A",
+     "texto": "Ótimo. O senhor pode me confirmar o número da residência?"
+    },
+    {
+     "quem": "C",
+     "texto": "Número 888."
+    },
+    {
+     "quem": "A",
+     "texto": "Qual é o bairro?"
+    },
+    {
+     "quem": "C",
+     "texto": "Industrial. Quero isso por escrito."
+    },
+    {
+     "quem": "A",
+     "texto": "E o município?"
+    },
+    {
+     "quem": "C",
+     "texto": "Vale Azul."
+    },
+    {
+     "quem": "A",
+     "texto": "Ok, obrigado."
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "titulo": "3º Passo - Entrevista e testes",
+   "meta": "120 s",
+   "checklist": "Pedir permissão para os testes; orientar com clareza; aguardar sem pressionar; fazer perguntas de esclarecimento; confirmar o entendimento.",
+   "falas": [
+    {
+     "quem": "A",
+     "texto": "Vou conferir o pagamento com o senhor. Pode ser?"
+    },
+    {
+     "quem": "C",
+     "texto": "Quero que conste que sim. Esse atendimento está sendo gravado?"
+    },
+    {
+     "quem": "C",
+     "texto": "Por que isso é minha responsabilidade? Vocês devem manter o serviço."
+    },
+    {
+     "quem": "A",
+     "texto": "As verificações servem para identificar se a causa é interna ou na rede, senhor Eduardo, e não colocam a responsabilidade em o senhor."
+    },
+    {
+     "quem": "A",
+     "texto": "Pode ler o valor e o código de autenticação do comprovante?"
+    },
+    {
+     "quem": "C",
+     "texto": "Vou verificar."
+    },
+    {
+     "quem": "sistema",
+     "tipo": "espera",
+     "segundos": 10,
+     "texto": "ESPERA DE 10 s - o cliente verifica; o atendente aguarda sem pressionar."
+    },
+    {
+     "quem": "C",
+     "texto": "R$ 204,90, autenticação B91C05."
+    },
+    {
+     "quem": "A",
+     "texto": "O pagamento foi feito por banco, lotérica ou aplicativo?"
+    },
+    {
+     "quem": "C",
+     "texto": "Pelo aplicativo do banco."
+    },
+    {
+     "quem": "A",
+     "texto": "Pelo sistema, esse pagamento não aparece. Vou abrir um pedido de baixa por pagamento não localizado. O senhor pode enviar o comprovante?"
+    },
+    {
+     "quem": "C",
+     "texto": "Anote aí: vou verificar. Quero isso por escrito."
+    },
+    {
+     "quem": "sistema",
+     "tipo": "espera",
+     "segundos": 10,
+     "texto": "ESPERA DE 10 s - o cliente verifica; o atendente aguarda sem pressionar."
+    },
+    {
+     "quem": "C",
+     "texto": "Posso sim, tenho a foto no celular."
+    },
+    {
+     "quem": "A",
+     "texto": "Perfeito. Enquanto o pedido é analisado, a ordem de corte será bloqueada."
+    },
+    {
+     "quem": "C",
+     "texto": "Quero que conste que que bom. Esse atendimento está sendo gravado?"
+    },
+    {
+     "quem": "A",
+     "texto": "Entendido, senhor Eduardo!"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "titulo": "4º Passo - Protocolo e previsão",
+   "meta": "60 s",
+   "checklist": "Coletar ponto de referência ou dado do pedido; pedir telefone e um segundo contato; avisar nova pausa e que pode ser chamado.",
+   "falas": [
+    {
+     "quem": "A",
+     "texto": "Pode me passar um telefone de contato?"
+    },
+    {
+     "quem": "C",
+     "texto": "Quero falar com o seu supervisor."
+    },
+    {
+     "quem": "A",
+     "texto": "Posso resolver agora e, se o senhor ainda quiser, registro o encaminhamento ao supervisor com prazo de retorno, senhor Eduardo."
+    },
+    {
+     "quem": "C",
+     "texto": "É (79) 9 1234-5678."
+    },
+    {
+     "quem": "A",
+     "texto": "O senhor prefere enviar o comprovante por e-mail ou por mensagem?"
+    },
+    {
+     "quem": "C",
+     "texto": "Por e-mail."
+    },
+    {
+     "quem": "A",
+     "texto": "O senhor tem mais um número de contato?"
+    },
+    {
+     "quem": "C",
+     "texto": "Não, só esse."
+    },
+    {
+     "quem": "A",
+     "texto": "Ok, entendido. Aguarde só mais um momento. O sistema ficará mudo, mas o senhor pode me chamar quando quiser."
+    },
+    {
+     "quem": "C",
+     "texto": "Anote aí: ok. Quero isso por escrito."
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "titulo": "5º Passo - Pausa de 10 s",
+   "meta": "10 s de pausa + 30 s para informar",
+   "checklist": "Gerar o protocolo; pedir que o cliente anote e aguardar; informar o protocolo pausadamente; confirmar que anotou; informar previsão e orientação.",
+   "falas": [
+    {
+     "quem": "sistema",
+     "tipo": "pausa",
+     "segundos": 10,
+     "texto": "PAUSA DE 10 s - cliente em silêncio; o aluno gera o protocolo."
+    },
+    {
+     "quem": "A",
+     "texto": "Senhor Eduardo, foi gerado um protocolo. O senhor pode anotar?"
+    },
+    {
+     "quem": "C",
+     "texto": "Sim, vou pegar uma caneta e um papel."
+    },
+    {
+     "quem": "sistema",
+     "tipo": "espera",
+     "segundos": 5,
+     "texto": "ESPERA DE 5 s - o cliente pega caneta e papel."
+    },
+    {
+     "quem": "C",
+     "texto": "Quero o protocolo por escrito, por mensagem e por e-mail."
+    },
+    {
+     "quem": "A",
+     "texto": "Combinado, senhor Eduardo. Informo o número agora e envio por escrito."
+    },
+    {
+     "quem": "A",
+     "texto": "O protocolo é o 26248873-7."
+    },
+    {
+     "quem": "C",
+     "texto": "Quero que conste que anotado. Esse atendimento está sendo gravado?"
+    },
+    {
+     "quem": "A",
+     "texto": "O pedido será respondido em até 2 dias úteis (prazo de exemplo), e a ordem de corte fica bloqueada nesse período."
+    },
+    {
+     "quem": "C",
+     "texto": "Ok."
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "titulo": "6º Passo - Algo mais?",
+   "meta": "20 s",
+   "checklist": "Perguntar se deseja algo mais e resolver ou registrar o pedido extra sem perder o fio.",
+   "falas": [
+    {
+     "quem": "A",
+     "texto": "O senhor deseja algo mais?"
+    },
+    {
+     "quem": "C",
+     "texto": "Sim: como faço para formalizar uma reclamação?"
+    },
+    {
+     "quem": "A",
+     "texto": "Abro agora uma manifestação formal, senhor Eduardo, com protocolo próprio."
+    },
+    {
+     "quem": "C",
+     "texto": "Segundo o meu direito, não, é suficiente."
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "titulo": "7º Passo - Pesquisa de satisfação",
+   "meta": "30 s",
+   "checklist": "Avisar o redirecionamento; falar da pesquisa sobre o atendimento e pedir a avaliação com educação, sem insistir; informar o e-mail em até 48 h.",
+   "falas": [
+    {
+     "quem": "A",
+     "texto": "Agora o senhor será redirecionado para o setor de avaliação."
+    },
+    {
+     "quem": "A",
+     "texto": "A primeira pergunta é sobre o meu atendimento, e espero que o senhor possa me dar uma nota positiva, que é muito importante para mim."
+    },
+    {
+     "quem": "C",
+     "texto": "Darei a nota conforme o atendimento. Que conste."
+    },
+    {
+     "quem": "A",
+     "texto": "Perfeito, senhor Eduardo. A pesquisa vai seguir o registro."
+    },
+    {
+     "quem": "A",
+     "texto": "Em até 48 horas, o senhor também receberá um e-mail para avaliação."
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "titulo": "8º Passo - Despedida",
+   "meta": "15 s",
+   "checklist": "Agradecer em nome da empresa; saudação final adequada ao horário; encerrar com cortesia.",
+   "falas": [
+    {
+     "quem": "A",
+     "texto": "A Fênix agradece. Tenha uma excelente [tarde/noite/dia, pela hora do aparelho]!"
+    },
+    {
+     "quem": "C",
+     "texto": "Aguardo o retorno. Boa tarde."
+    },
+    {
+     "quem": "sistema",
+     "tipo": "fim",
+     "segundos": null,
+     "texto": "FIM DA CHAMADA - o cronômetro total para junto com a despedida."
+    }
+   ]
+  }
+ ],
+ "aviso": "Dados fictícios: nomes, endereços, telefones, protocolos, valores e prazos são exemplos para treino. Nenhum roteiro cita empresa real; o atendente fala 'Atendimento Fênix' (variável {EMPRESA}). Prazos, valores e regras devem ser ajustados à política da operação onde o treino for aplicado."
+}
