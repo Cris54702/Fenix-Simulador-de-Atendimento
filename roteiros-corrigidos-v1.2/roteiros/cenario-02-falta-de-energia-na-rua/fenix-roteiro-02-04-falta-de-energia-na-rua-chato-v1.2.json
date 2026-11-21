@@ -1,0 +1,409 @@
+{
+ "id": "02.04",
+ "versao": "1.2",
+ "empresa_padrao": "Fênix",
+ "cenario": {
+  "id": 2,
+  "titulo": "Falta de energia na rua",
+  "dificuldade": 2,
+  "novo": false,
+  "objetivo": "Ocorrência coletiva: identificar a abrangência, coletar indícios da causa na rede e orientar sobre segurança.",
+  "armadilha": "Tratar como problema interno da casa e pedir testes de disjuntor sem necessidade; esquecer de vincular a ocorrência coletiva."
+ },
+ "persona": {
+  "id": 4,
+  "titulo": "Cliente chato",
+  "dificuldade": 3,
+  "novo": false,
+  "cliente_ficticio": "Valter Prado",
+  "voz": "Ritmo pausado, tom irônico",
+  "paciencia": 50,
+  "perfil": "Cliente que questiona cada pergunta, pede justificativas e checa o atendente.",
+  "tecnica_chave": "Responder cada dúvida em uma frase objetiva e voltar ao roteiro com educação.",
+  "erros_comuns": [
+   "Ficar na defensiva diante das perguntas.",
+   "Dar respostas longas e se perder do passo.",
+   "Ceder e pular itens obrigatórios."
+  ],
+  "avaliador_observa": [
+   "Respostas curtas e corretas.",
+   "Retomada do passo após cada pergunta.",
+   "Cordialidade até o fim."
+  ]
+ },
+ "dificuldade_total": 5,
+ "nivel_libera": "Pleno",
+ "dados_chamado": {
+  "unidade_consumidora": "238947-5",
+  "rua": "Avenida dos Ipês",
+  "numero": "402",
+  "bairro": "Vila Esperança",
+  "cidade": "Vale Azul",
+  "protocolo": "26224410-3"
+ },
+ "passos": [
+  {
+   "n": 1,
+   "titulo": "1º Passo - Abertura",
+   "meta": "60 s",
+   "checklist": "Saudação pelo horário do aparelho; nome da empresa; nome do atendente; pedir o nome do cliente e chamá-lo pelo nome; triagem; pedir unidade consumidora ou CPF.",
+   "falas": [
+    {
+     "quem": "A",
+     "texto": "Atendimento Fênix, [nome do atendente], [bom dia/boa tarde/boa noite, pela hora do aparelho]. Qual o seu nome, por favor?"
+    },
+    {
+     "quem": "C",
+     "texto": "[saudação]. Valter Prado. Antes de tudo: esta ligação está sendo gravada?"
+    },
+    {
+     "quem": "A",
+     "texto": "Senhor Valter, no que posso ajudar?"
+    },
+    {
+     "quem": "C",
+     "texto": "Hmm, estamos sem energia desde as seis da manhã e já é quase meio-dia. Isso vai constar no sistema?"
+    },
+    {
+     "quem": "C",
+     "texto": "Por que o senhor pergunta tanto? Esses dados não estão aí no sistema?"
+    },
+    {
+     "quem": "A",
+     "texto": "São perguntas rápidas, senhor Valter, para confirmar que estou falando com o senhor e resolver mais depressa."
+    },
+    {
+     "quem": "A",
+     "texto": "Senhor Valter, a falta de energia atinge somente a sua casa ou a rua toda?"
+    },
+    {
+     "quem": "C",
+     "texto": "A rua toda. Os vizinhos também estão sem luz."
+    },
+    {
+     "quem": "A",
+     "texto": "Senhor Valter, pode me informar o código da unidade consumidora, que fica no canto superior direito da fatura, ou o CPF do titular?"
+    },
+    {
+     "quem": "C",
+     "texto": "Tá, mas a unidade consumidora é 238947-5. O senhor anotou direito?"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "titulo": "2º Passo - Pausa de 20 s e confirmação positiva",
+   "meta": "20 s de pausa + 45 s de confirmação",
+   "checklist": "Pedir licença e avisar que o sistema ficará mudo; dizer 'é só chamar'; agradecer ao voltar; confirmar rua, número, bairro e município, um a um.",
+   "falas": [
+    {
+     "quem": "A",
+     "texto": "Obrigado(a). Vou consultar o seu cadastro e, enquanto isso, o sistema ficará mudo. Se o senhor precisar de qualquer coisa, é só me chamar!"
+    },
+    {
+     "quem": "C",
+     "texto": "Por que o sistema fica mudo? Não dá para consultar falando?"
+    },
+    {
+     "quem": "A",
+     "texto": "Para consultar sem erro. É rápido, e se precisar, é só me chamar."
+    },
+    {
+     "quem": "C",
+     "texto": "Tudo bem, pode consultar."
+    },
+    {
+     "quem": "sistema",
+     "tipo": "pausa",
+     "segundos": 20,
+     "texto": "PAUSA DE 20 s - cliente em silêncio. O aluno consulta o cadastro; se o cliente chamar, o atendente responde."
+    },
+    {
+     "quem": "A",
+     "texto": "Senhor Valter, obrigado por aguardar. Localizei os seus dados."
+    },
+    {
+     "quem": "A",
+     "texto": "O senhor reside na Avenida dos Ipês, correto?"
+    },
+    {
+     "quem": "C",
+     "texto": "Se eu falar, sim, é nesse endereço mesmo."
+    },
+    {
+     "quem": "A",
+     "texto": "Ótimo. O senhor pode me confirmar o número da residência?"
+    },
+    {
+     "quem": "C",
+     "texto": "Número 402."
+    },
+    {
+     "quem": "A",
+     "texto": "Qual é o bairro?"
+    },
+    {
+     "quem": "C",
+     "texto": "Vila Esperança. Isso vai constar no sistema?"
+    },
+    {
+     "quem": "A",
+     "texto": "E o município?"
+    },
+    {
+     "quem": "C",
+     "texto": "Vale Azul."
+    },
+    {
+     "quem": "A",
+     "texto": "Ok, obrigado."
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "titulo": "3º Passo - Entrevista e testes",
+   "meta": "120 s",
+   "checklist": "Pedir permissão para os testes; orientar com clareza; aguardar sem pressionar; fazer perguntas de esclarecimento; confirmar o entendimento.",
+   "falas": [
+    {
+     "quem": "A",
+     "texto": "Vou fazer algumas perguntas para ajudar a equipe a localizar a causa. Pode ser?"
+    },
+    {
+     "quem": "C",
+     "texto": "Hmm, sim. O senhor anotou direito?"
+    },
+    {
+     "quem": "C",
+     "texto": "E se eu não quiser fazer essas verificações? Está no contrato?"
+    },
+    {
+     "quem": "A",
+     "texto": "É opcional, senhor Valter, mas aumenta a chance de resolver sem visita. Posso explicar o motivo de cada uma."
+    },
+    {
+     "quem": "A",
+     "texto": "Há algum transformador, poste ou fio com aparência danificada por perto?"
+    },
+    {
+     "quem": "C",
+     "texto": "Vou verificar."
+    },
+    {
+     "quem": "sistema",
+     "tipo": "espera",
+     "segundos": 10,
+     "texto": "ESPERA DE 10 s - o cliente verifica; o atendente aguarda sem pressionar."
+    },
+    {
+     "quem": "C",
+     "texto": "Tá, mas tem um transformador soltando fumaça na esquina."
+    },
+    {
+     "quem": "A",
+     "texto": "Chegou a ouvir algum estouro ou ver faísca?"
+    },
+    {
+     "quem": "C",
+     "texto": "Sim, ouvi um estouro por volta das seis."
+    },
+    {
+     "quem": "A",
+     "texto": "Há alguma árvore ou galho sobre os fios?"
+    },
+    {
+     "quem": "C",
+     "texto": "Se eu falar, não, só o transformador. Isso vai constar no sistema?"
+    },
+    {
+     "quem": "A",
+     "texto": "Por segurança, mantenha distância do transformador e de qualquer fio caído, e não deixe ninguém se aproximar."
+    },
+    {
+     "quem": "C",
+     "texto": "Pode deixar."
+    },
+    {
+     "quem": "A",
+     "texto": "Entendido, senhor Valter!"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "titulo": "4º Passo - Protocolo e previsão",
+   "meta": "60 s",
+   "checklist": "Coletar ponto de referência ou dado do pedido; pedir telefone e um segundo contato; avisar nova pausa e que pode ser chamado.",
+   "falas": [
+    {
+     "quem": "A",
+     "texto": "Vou vincular a sua ligação à ocorrência da rua. Preciso de um ponto de referência."
+    },
+    {
+     "quem": "C",
+     "texto": "Para que o senhor precisa desses dados? Vão usar para quê?"
+    },
+    {
+     "quem": "A",
+     "texto": "Somente para tratar o seu pedido e avisar o senhor sobre a equipe ou a resposta, senhor Valter."
+    },
+    {
+     "quem": "C",
+     "texto": "Em frente à padaria Pão Dourado. O senhor anotou direito?"
+    },
+    {
+     "quem": "A",
+     "texto": "Pode me passar um telefone de contato?"
+    },
+    {
+     "quem": "C",
+     "texto": "É (79) 9 8765-4321."
+    },
+    {
+     "quem": "A",
+     "texto": "O senhor tem mais um número de contato?"
+    },
+    {
+     "quem": "C",
+     "texto": "Tenho, o da minha esposa: (79) 9 9876-1122."
+    },
+    {
+     "quem": "A",
+     "texto": "Ok, entendido. Aguarde só mais um momento. O sistema ficará mudo, mas o senhor pode me chamar quando quiser."
+    },
+    {
+     "quem": "C",
+     "texto": "Ok."
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "titulo": "5º Passo - Pausa de 10 s",
+   "meta": "10 s de pausa + 30 s para informar",
+   "checklist": "Gerar o protocolo; pedir que o cliente anote e aguardar; informar o protocolo pausadamente; confirmar que anotou; informar previsão e orientação.",
+   "falas": [
+    {
+     "quem": "sistema",
+     "tipo": "pausa",
+     "segundos": 10,
+     "texto": "PAUSA DE 10 s - cliente em silêncio; o aluno gera o protocolo."
+    },
+    {
+     "quem": "A",
+     "texto": "Senhor Valter, foi gerado um protocolo. O senhor pode anotar?"
+    },
+    {
+     "quem": "C",
+     "texto": "Tá, mas sim, vou pegar uma caneta e um papel. Isso vai constar no sistema?"
+    },
+    {
+     "quem": "sistema",
+     "tipo": "espera",
+     "segundos": 5,
+     "texto": "ESPERA DE 5 s - o cliente pega caneta e papel."
+    },
+    {
+     "quem": "C",
+     "texto": "Quero que o senhor repita o protocolo duas vezes e soletre."
+    },
+    {
+     "quem": "A",
+     "texto": "Claro, senhor Valter: repito e soletro devagar, e confirmo com o senhor dígito a dígito."
+    },
+    {
+     "quem": "A",
+     "texto": "O protocolo é o 26224410-3."
+    },
+    {
+     "quem": "C",
+     "texto": "Anotado."
+    },
+    {
+     "quem": "A",
+     "texto": "A ocorrência é coletiva e a previsão de restabelecimento é até as 14h. Se esse prazo mudar, a equipe entrará em contato."
+    },
+    {
+     "quem": "C",
+     "texto": "Se eu falar, ok. O senhor anotou direito?"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "titulo": "6º Passo - Algo mais?",
+   "meta": "20 s",
+   "checklist": "Perguntar se deseja algo mais e resolver ou registrar o pedido extra sem perder o fio.",
+   "falas": [
+    {
+     "quem": "A",
+     "texto": "O senhor deseja algo mais?"
+    },
+    {
+     "quem": "C",
+     "texto": "Já que perguntou: e aquela outra dúvida que eu tinha do mês passado?"
+    },
+    {
+     "quem": "A",
+     "texto": "Posso registrar essa outra dúvida em um novo protocolo, senhor Valter. Quer que eu faça isso agora?"
+    },
+    {
+     "quem": "C",
+     "texto": "Não, é suficiente."
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "titulo": "7º Passo - Pesquisa de satisfação",
+   "meta": "30 s",
+   "checklist": "Avisar o redirecionamento; falar da pesquisa sobre o atendimento e pedir a avaliação com educação, sem insistir; informar o e-mail em até 48 h.",
+   "falas": [
+    {
+     "quem": "A",
+     "texto": "Agora o senhor será redirecionado para o setor de avaliação."
+    },
+    {
+     "quem": "A",
+     "texto": "A primeira pergunta é sobre o meu atendimento, e espero que o senhor possa me dar uma nota positiva, que é muito importante para mim."
+    },
+    {
+     "quem": "C",
+     "texto": "Qual vai ser a pergunta exatamente? Vai valer para o senhor?"
+    },
+    {
+     "quem": "A",
+     "texto": "A pesquisa é sobre o meu atendimento, e a nota é de o senhor, de 0 a 10."
+    },
+    {
+     "quem": "A",
+     "texto": "Em até 48 horas, o senhor também receberá um e-mail para avaliação."
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "titulo": "8º Passo - Despedida",
+   "meta": "15 s",
+   "checklist": "Agradecer em nome da empresa; saudação final adequada ao horário; encerrar com cortesia.",
+   "falas": [
+    {
+     "quem": "A",
+     "texto": "A Fênix agradece. Tenha uma excelente [tarde/noite/dia, pela hora do aparelho]!"
+    },
+    {
+     "quem": "C",
+     "texto": "Anotei o seu nome. Boa tarde."
+    },
+    {
+     "quem": "sistema",
+     "tipo": "fim",
+     "segundos": null,
+     "texto": "FIM DA CHAMADA - o cronômetro total para junto com a despedida."
+    }
+   ]
+  }
+ ],
+ "aviso": "Dados fictícios: nomes, endereços, telefones, protocolos, valores e prazos são exemplos para treino. Nenhum roteiro cita empresa real; o atendente fala 'Atendimento Fênix' (variável {EMPRESA}). Prazos, valores e regras devem ser ajustados à política da operação onde o treino for aplicado."
+}
