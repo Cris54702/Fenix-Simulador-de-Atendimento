@@ -1,0 +1,34 @@
+Fênix | Simulado de Atendimento — versão 1.2.1 (21/11/2026)
+Selo: v1.2.1 | c 5.8 | Livro das Regras v5.8
+
+NOVIDADE DA 1.2.1: ícone oficial do app aplicado (abertura, login, Sobre, aba e instalação).
+Da 1.2: área "Aprender" com a Chamada Modelo (o sistema faz os dois lados) e a Troca de Lugar (o aluno é o cliente).
+Da 1.1: os 120 roteiros de fábrica estão dentro do app; localidades fictícias; empresa padrão Fênix.
+Localidades dos roteiros trocadas por nomes fictícios; empresa padrão: Fênix.
+
+ARQUIVOS
+- fenix-simulado-de-atendimento-v1.2.1.html  app com a versão no nome (controle interno)
+- index.html                               cópia neutra, sem versão (a que vai para o GitHub Pages)
+- icone-192.png, icone-512.png, icone-maskable-512.png, apple-touch-icon.png   ícones do app (publicar junto do index.html)
+- sw.js                                    service worker para abrir sem internet (publicar junto do index.html)
+- fenix-simulado-de-atendimento-manual-v1.2.1.md / .pdf   manual do usuário (o app também traz o MD embutido)
+- fenix-simulado-de-atendimento-changelog-v1.2.1.md       changelog
+- img/                                     prints usados no manual
+- roteiros-corrigidos-v1.2/                os 120 roteiros em .md e .json com as localidades fictícias (referência; o app já os traz embutidos)
+- LEIAME.txt                               este arquivo
+
+COMO PUBLICAR
+1. Suba index.html, sw.js, os 4 arquivos de ícone e o PDF do manual na mesma pasta do GitHub Pages.
+2. O app carrega o Fênix Core de https://fenicris-dev.github.io/Fenix-Core/fenix-core.js (não altera o core).
+3. Rode o Painel da biblioteca antes de publicar as regras do Firestore (coleções: membros, roteiros,
+   simulacoes, ranking, conquistas, supervisao).
+
+PONTOS PARA CONFERIR NA PRIMEIRA PUBLICAÇÃO
+- Os nomes das funções da nuvem no core (salvarDoc, listarDocs, excluirMinhaConta) e do login Google
+  (entrarComGoogle) foram ligados por detecção; se o core usar outros nomes, ajuste a ponte "Nuvem" no código.
+- A águia do menu lateral e do PDF é provisória (SVG); troque pela Fenix_Logo_Branca oficial em base64. O ícone do app já é o oficial.
+- Links dos Termos e da Política apontam para a pasta Termos/ do Fenix-Core; ajuste para os arquivos exatos.
+- Prazos e valores dos roteiros são exemplos; ajuste à política da operação antes de usar com alunos reais.
+- O Duelo de alunos (dois aparelhos) ainda não existe: depende da nuvem do Core.
+- A voz sintética varia por aparelho e não transmite emoção; para tom de voz real, grave atendentes reais nos roteiros-chave.
+- Teste com dois aparelhos (ranking e supervisor) depois de ligar a nuvem.
